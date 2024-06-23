@@ -28,7 +28,7 @@ setTimeout(() => {
 dog_walking.addEventListener("transitionend", () => {
   dog_walking.style.display = "none";
   dog_sitting.style.display = "block";
-  dialogContainer.style.display = "block";
+  dialogContainer.style.display = "flex";
   typeDialogue();
 });
 
@@ -63,7 +63,7 @@ nextBtn.addEventListener("click", showNextDialogue);
 
 dog_sitting.addEventListener("animationend", () => {
   dog_sitting.style.display = "none";
-  cadeauContainer.style.display = "block";
+  cadeauContainer.style.display = "flex";
   cadeauContainer.classList.add("cadeau_fading_animation");
 });
 
@@ -71,12 +71,20 @@ cadeauContainer.addEventListener("animationend", () => {
   cadeau.classList.add("cadeau_shake_animation");
 });
 
-cadeau.addEventListener("animationend", () => {
-  ouvrirBtn.style.display = "block";
+let iteration = 0;
+cadeau.addEventListener("animationiteration", () => {
+  if(iteration == 5){
+    ouvrirBtn.style.opacity = "1";
+    ouvrirBtn.disabled = false;
+  }
+  else{
+    iteration++;
+  }
 });
 
 // Ouvrir le cadeau
 ouvrirBtn.addEventListener("click", () => {
+  console.log("Ajouter code gâteau (étape 1)");
   // cadeauContainer.style.display = "none";
   // lettreContainer.style.display = "block";
   // cadeauContainer.classList.remove("cadeau_fading_animation");
