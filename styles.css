@@ -193,12 +193,6 @@ button {
   margin-bottom: 20px;
 }
 
-#fleche-btn {
-  font-size: 24px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 #balloons{
   display: flex;
   flex-wrap: wrap;
@@ -208,6 +202,17 @@ button {
   margin-top: 2%;
   width: 100%;
   z-index: 0;
+}
+
+#fleche
+{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 5px;
+	height: 60px;
+  display: none;
+  cursor: pointer;
 }
 
 .balloon {

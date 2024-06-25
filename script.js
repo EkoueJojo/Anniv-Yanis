@@ -9,7 +9,7 @@ const cadeau = document.getElementById("cadeau");
 const gateau = document.getElementById("gateau");
 const ouvrirBtn = document.getElementById("ouvrir-btn");
 const lettreContainer = document.getElementById("lettre-container");
-const flecheBtn = document.getElementById("fleche-btn");
+const flecheBtn = document.getElementById("fleche");
 
 const dialogues = [
   "Bonjour, c'est un dialogue d'exemple.",
@@ -101,15 +101,19 @@ function openCadeau()
 
 function eteindreBougie()
 {
+  ouvrirBtn.classList.add("fadeout_animation");
+  ouvrirBtn.style.opacity = "0";
   gateau.src = "gateauEteint.png";
+  flecheBtn.classList.add("fadein_animation");
+  flecheBtn.style.display = "initial";
+  flecheBtn.addEventListener("click", showLettre);
+}
+
+function showLettre()
+{
+  console.log("Troisième étape ^^");
+  flecheBtn.removeEventListener("click", showLettre);
 }
 
 // Ouvrir le cadeau
 ouvrirBtn.addEventListener("click", openCadeau);
-
-// Bouton pour défiler la lettre
-flecheBtn.addEventListener("click", () => {
-  alert(
-    "Lettre défilée (tu peux ajouter du code ici pour faire défiler la lettre)"
-  );
-});
