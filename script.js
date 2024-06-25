@@ -92,10 +92,16 @@ function openCadeau()
   balloons.style.visibility = "visible";
   balloons.style.animation = "balloons 15s 1";
   animationContainer.style.backgroundImage = "initial";
-  animationContainer.style.backgroundColor = "hsl(70, 31%, 85%)";
+  animationContainer.style.backgroundColor = "#E1E5CD";
   animationContainer.classList.add("fadein_animation");
   ouvrirBtn.innerText = "Faire un vœu";
   ouvrirBtn.removeEventListener("click", openCadeau);
+  ouvrirBtn.addEventListener("click", eteindreBougie);
+}
+
+function eteindreBougie()
+{
+  console.log("Bougies s'éteingnent !!");
 }
 
 // Ouvrir le cadeau
