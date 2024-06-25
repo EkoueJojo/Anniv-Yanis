@@ -215,6 +215,11 @@ button {
   cursor: pointer;
 }
 
+#fume{
+  display: none;
+  z-index: 3;
+}
+
 .balloon {
   display:inline-block;
   width:7vw;

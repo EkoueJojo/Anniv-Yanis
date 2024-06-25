@@ -104,6 +104,7 @@ function eteindreBougie()
   ouvrirBtn.classList.add("fadeout_animation");
   ouvrirBtn.style.opacity = "0";
   gateau.src = "gateauEteint.png";
+  fume.style.display = "initial";
   flecheBtn.classList.add("fadein_animation");
   flecheBtn.style.display = "initial";
   flecheBtn.addEventListener("click", showLettre);
