@@ -85,7 +85,9 @@ cadeau.addEventListener("animationiteration", () => {
 // Ouvrir le cadeau
 ouvrirBtn.addEventListener("click", () => {
   console.log("Ajouter code gâteau (étape 1)");
-  // cadeauContainer.style.display = "none";
+  balloons.style.visibility = "visible";
+  cadeauContainer.style.display = "none";
+  balloons.style.animation = "balloons 15s 1";
   // lettreContainer.style.display = "block";
   // cadeauContainer.classList.remove("cadeau_fading_animation");
   // cadeau.classList.add("cadeau_shake_animation");
