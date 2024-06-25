@@ -43,7 +43,7 @@ button {
   transition: left 2s ease-in-out;
 }
 
-@keyframes dog_fading {
+@keyframes fadeout {
   from {
     opacity: 100%;
   }
@@ -52,8 +52,8 @@ button {
   }
 }
 
-.dog_fading_animation {
-  animation: dog_fading 2s linear;
+.fadeout_animation {
+  animation: fadeout 2s linear;
 }
 
 #dog_sitting {
@@ -101,7 +101,7 @@ button {
   margin: 0;
 }
 
-@keyframes cadeau_fading {
+@keyframes fadein {
   from {
     opacity: 0%;
   }
@@ -110,8 +110,8 @@ button {
   }
 }
 
-.cadeau_fading_animation {
-  animation: cadeau_fading 2s linear;
+.fadein_animation {
+  animation: fadein 2s linear;
 }
 
 #cadeau-container {
@@ -122,6 +122,10 @@ button {
 	justify-content: flex-end;
   display: none;
   text-align: center;
+}
+
+#gateau {
+  display: none;
 }
 
 @keyframes cadeau_shake {
@@ -168,7 +172,6 @@ button {
 #ouvrir-btn {
 	padding: 10px 20px;
 	font-size: 16px;
-	cursor: pointer;
 	margin: 5px;
 	margin-top: 20px;
   opacity: 0;
