@@ -102,6 +102,7 @@ function openCadeau()
 function eteindreBougie()
 {
   gateau.src = "gateauEteint.png";
+  fume.style.display = "initial";
 }
 
 // Ouvrir le cadeau

@@ -210,6 +210,11 @@ button {
   z-index: 0;
 }
 
+#fume{
+  display: none;
+  z-index: 3;
+}
+
 .balloon {
   display:inline-block;
   width:7vw;
