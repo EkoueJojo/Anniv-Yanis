@@ -126,6 +126,7 @@ button {
 
 #gateau {
   display: none;
+  z-index: 1;
 }
 
 @keyframes cadeau_shake {
@@ -200,8 +201,12 @@ button {
 #balloons{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0%;
   margin-top: 2%;
+  width: 100%;
+  z-index: 0;
 }
 
 .balloon {
@@ -223,8 +228,8 @@ button {
   50%{ transform:translateY(-25px) rotate(4deg); }
 }
 @keyframes balloons {
-  from {margin-top: 100%;}
-  to {margin-top: 2%;}
+  from {top: 100%;z-index: 1;}
+  to {top: 0%;z-index: 1;}
 }
 
 .balloon:before {

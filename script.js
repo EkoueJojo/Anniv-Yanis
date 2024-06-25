@@ -89,13 +89,12 @@ function openCadeau()
   cadeau.style.display = "none";
   gateau.style.display = "initial";
   gateau.classList.add("fadein_animation");
+  balloons.style.visibility = "visible";
+  balloons.style.animation = "balloons 15s 1";
   animationContainer.style.backgroundImage = "initial";
   animationContainer.style.backgroundColor = "hsl(70, 31%, 85%)";
   animationContainer.classList.add("fadein_animation");
   ouvrirBtn.innerText = "Faire un vœu";
-  balloons.style.visibility = "visible";
-  cadeauContainer.style.display = "none";
-  balloons.style.animation = "balloons 15s 1";
   ouvrirBtn.removeEventListener("click", openCadeau);
 }
 
