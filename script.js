@@ -5,6 +5,7 @@ const dialogueText = document.getElementById("dialogue-text");
 const nextBtn = document.getElementById("next-btn");
 const cadeauContainer = document.getElementById("cadeau-container");
 const cadeau = document.getElementById("cadeau");
+const gateau = document.getElementById("gateau");
 const ouvrirBtn = document.getElementById("ouvrir-btn");
 const lettreContainer = document.getElementById("lettre-container");
 const flecheBtn = document.getElementById("fleche-btn");
@@ -55,7 +56,7 @@ function showNextDialogue() {
     currentDialogueIndex = 0; // Réinitialiser l'index si tu veux boucler
     // typeDialogue();
     dialogContainer.style.display = "none";
-    dog_sitting.classList.add("dog_fading_animation");
+    dog_sitting.classList.add("fadeout_animation");
   }
 }
 
@@ -64,7 +65,7 @@ nextBtn.addEventListener("click", showNextDialogue);
 dog_sitting.addEventListener("animationend", () => {
   dog_sitting.style.display = "none";
   cadeauContainer.style.display = "flex";
-  cadeauContainer.classList.add("cadeau_fading_animation");
+  cadeauContainer.classList.add("fadein_animation");
 });
 
 cadeauContainer.addEventListener("animationend", () => {
@@ -73,7 +74,7 @@ cadeauContainer.addEventListener("animationend", () => {
 
 let iteration = 0;
 cadeau.addEventListener("animationiteration", () => {
-  if(iteration == 5){
+  if(iteration == 3){
     ouvrirBtn.style.opacity = "1";
     ouvrirBtn.disabled = false;
   }
@@ -85,7 +86,10 @@ cadeau.addEventListener("animationiteration", () => {
 // Ouvrir le cadeau
 ouvrirBtn.addEventListener("click", () => {
   console.log("Ajouter code gâteau (étape 1)");
-  // cadeauContainer.style.display = "none";
+  cadeau.style.display = "none";
+  gateau.style.display = "initial";
+  gateau.classList.add("fadein_animation");
+
   // lettreContainer.style.display = "block";
   // cadeauContainer.classList.remove("cadeau_fading_animation");
   // cadeau.classList.add("cadeau_shake_animation");
