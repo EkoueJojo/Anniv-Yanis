@@ -101,7 +101,7 @@ function openCadeau()
 
 function eteindreBougie()
 {
-  console.log("Bougies s'éteingnent !!");
+  gateau.src = "gateauEteint.png";
 }
 
 // Ouvrir le cadeau

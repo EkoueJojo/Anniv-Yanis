@@ -176,6 +176,7 @@ button {
 	margin: 5px;
 	margin-top: 20px;
   opacity: 0;
+  z-index: 2;
 }
 
 #lettre-container {
