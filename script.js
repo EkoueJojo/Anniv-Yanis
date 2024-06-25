@@ -3,6 +3,7 @@ const dog_sitting = document.getElementById("dog_sitting");
 const dialogContainer = document.getElementById("dialogue-container");
 const dialogueText = document.getElementById("dialogue-text");
 const nextBtn = document.getElementById("next-btn");
+const animationContainer = document.getElementById("animation-container");
 const cadeauContainer = document.getElementById("cadeau-container");
 const cadeau = document.getElementById("cadeau");
 const gateau = document.getElementById("gateau");
@@ -83,17 +84,20 @@ cadeau.addEventListener("animationiteration", () => {
   }
 });
 
-// Ouvrir le cadeau
-ouvrirBtn.addEventListener("click", () => {
-  console.log("Ajouter code gâteau (étape 1)");
+function openCadeau()
+{
   cadeau.style.display = "none";
   gateau.style.display = "initial";
   gateau.classList.add("fadein_animation");
+  animationContainer.style.backgroundImage = "initial";
+  animationContainer.style.backgroundColor = "hsl(70, 31%, 85%)";
+  animationContainer.classList.add("fadein_animation");
+  ouvrirBtn.innerText = "Faire un vœu";
+  ouvrirBtn.removeEventListener("click", openCadeau);
+}
 
-  // lettreContainer.style.display = "block";
-  // cadeauContainer.classList.remove("cadeau_fading_animation");
-  // cadeau.classList.add("cadeau_shake_animation");
-});
+// Ouvrir le cadeau
+ouvrirBtn.addEventListener("click", openCadeau);
 
 // Bouton pour défiler la lettre
 flecheBtn.addEventListener("click", () => {
