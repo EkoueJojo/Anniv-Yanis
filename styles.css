@@ -59,7 +59,7 @@ img {
 	display: block;
 	height: 50%;
 	margin: auto;
-	transition: margin-right 2s ease-in-out;
+  margin-bottom: 0;
 }
 
 @keyframes fadeout {
@@ -80,6 +80,8 @@ img {
 	min-width: 380px;
 	max-width: 100%;
 	height: auto;
+  position: absolute;
+	bottom: 0;
 	display: none;
 }
 

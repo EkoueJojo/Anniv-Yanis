@@ -38,11 +38,12 @@ let currentDialogueIndex = 0;
 let charIndex = 0;
 const typingSpeed = 50; // Vitesse de saisie en ms par caractère
 
-dog.style.marginRight = "calc(100% + 0px)";
+dog.style.transform = "translate(-60vw, 0)";
 
 // Jouer la vidéo du berger allemand
 setTimeout(() => {
-  dog.style.removeProperty("margin-right");
+  dog.style.removeProperty("transform");
+  dog.style.transition = "transform 2s ease-in-out";
 }, 500); // Délai pour commencer l'animation après le chargement
 
 // Afficher le cadeau après l'animation du chien
