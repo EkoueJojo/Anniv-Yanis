@@ -181,7 +181,6 @@ function eteindreBougie()
 function showLettre()
 {
   clearInterval(smokeGenerationInterval);
-  clearInterval(smokeAnimationInterval);
 
   lettreContainer.classList.add("fadein_animation");
   lettreContainer.style.display = "initial";
