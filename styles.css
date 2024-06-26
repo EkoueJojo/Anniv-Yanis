@@ -133,9 +133,14 @@ img {
   text-align: center;
 }
 
+#cadeau{
+  width: 24vw;
+}
+
 #gateau {
   display: none;
   z-index: 1;
+  max-width: 80vw;
 }
 
 @keyframes cadeau_shake {
