@@ -12,15 +12,15 @@ const lettreContainer = document.getElementById("lettre-container");
 const smokeContainer = document.getElementById("smokeContainer");
 const flecheBtn = document.getElementById("fleche");
 
-let SMOKE_FRAME_COUNT = 7;
-let SMOKE_FRAME_DURATION = 100;
-let SMOKE_GENERATION_INTERVAL = 250;
-let SMOKE_ANIMATION_INTERVAL = 50;
-let SMOKE_MOVE_SPEED = 2;
-let SMOKE_GENERATION_RATIO = 2;
-let SMOKE_FRAME_CHANGE_RATIO = 5;
-let SMOKE_MAX_BRIGHTNESS = 3 / 4;
-let SMOKE_MAX_X_POSITION = 70;
+const SMOKE_FRAME_COUNT = 7;
+const SMOKE_FRAME_DURATION = 100;
+const SMOKE_GENERATION_INTERVAL = 250;
+const SMOKE_ANIMATION_INTERVAL = 50;
+const SMOKE_MOVE_SPEED = 2;
+const SMOKE_GENERATION_RATIO = 2;
+const SMOKE_FRAME_CHANGE_RATIO = 5;
+const SMOKE_MAX_BRIGHTNESS = 3 / 4;
+const SMOKE_MAX_X_POSITION = 70;
 
 let smokeGenerationInterval;
 let smokeAnimationInterval;
