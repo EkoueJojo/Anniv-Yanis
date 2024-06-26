@@ -1,3 +1,7 @@
+* {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -26,7 +30,6 @@ button {
 }
 
 img {
-  user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
@@ -93,6 +96,14 @@ img {
 
 #dialogue-text {
   color: black;
+  font-size: 18px;
+  margin: 0;
+}
+
+#plume {
+  opacity: 0;
+	height: 4em;
+  filter: invert(1) drop-shadow(1px 1px 1px gray);
 }
 
 /* #dialogue-bubble:after {
@@ -104,11 +115,6 @@ img {
   border-style: solid;
   border-color: #f9f9f9 transparent transparent transparent;
 } */
-
-#dialogue-text {
-  font-size: 18px;
-  margin: 0;
-}
 
 @keyframes fadein {
   from {
@@ -189,30 +195,27 @@ img {
 }
 
 #lettre-container{
-  display: none;
-  position: absolute;
-  top: 0;
-  z-index: 5;
-  width: 100vw;
-  height: 100vh;
-}
-
-#lettre-container img{
-  width: 100vw;
-  height: auto;
+	display: none;
+	position: absolute;
+	z-index: 5;
+	width: 100vw;
+	height: 100vh;
 }
 
 #lettre{
-  position: absolute;
-  top: 0;
+	background-image: url(lettre.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	aspect-ratio: 5 / 7;
 }
 
 #texte-anniversaire {
-  font-size: 18px;
-  margin-bottom: 20px;
-  width: 100vw;
-  height: 100vh;
-  padding: 1%;
+	font-size: 18px;
+	padding: 130px;
+	padding-top: 100px;
+	padding-bottom: 10px;
+	margin: 0;
 }
 
 #balloons{
@@ -307,3 +310,16 @@ img {
 
 .balloon:nth-child(5){ background:hsl(23,55%,57%); animation-duration:5s; }
 .balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
+
+@media (orientation: portrait) {
+  #lettre-container{
+    justify-content: center;
+  }
+
+  #lettre{
+    width: auto;
+    height: 100%;
+    position: relative;
+    right: 25%;
+  }
+}

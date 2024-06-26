@@ -12,6 +12,7 @@ const lettreContainer = document.getElementById("lettre-container");
 const smokeContainer = document.getElementById("smokeContainer");
 const flecheBtn = document.getElementById("fleche");
 const textanniversaire = document.getElementById("texte-anniversaire");
+const plume = document.getElementById("plume");
 
 const SMOKE_FRAME_COUNT = 7;
 const SMOKE_FRAME_DURATION = 100;
@@ -67,6 +68,10 @@ function typeLettre() {
     textanniversaire.textContent += lettre.charAt(charIndex);
     charIndex++;
     setTimeout(typeLettre, typingSpeed);
+  }
+  else {
+    plume.style.opacity = "1";
+    plume.classList.add("fadein_animation")
   }
 }
 
