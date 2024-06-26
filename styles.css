@@ -38,21 +38,28 @@ img {
 }
 
 #animation-container {
-  width: 100%;
-  height: 100%;
-  background-image: url(motard.avif);
-	background-repeat: no-repeat;
-  background-size: 100% auto;
-	background-position: center;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-#dog_walking {
-  position: absolute;
-  width: 350px; /* Ajuster la taille si nécessaire */
-  height: auto;
-  left: -300px; /* Position de départ en dehors de l'écran */
-  bottom: 50px; /* Ajuster pour que le chien soit sur la pelouse */
-  transition: left 2s ease-in-out;
+#dogContainer {
+	width: 100%;
+	display: flex;
+	aspect-ratio: 66 / 37;
+	background-image: url(motard.avif);
+	background-size: 100% auto;
+	align-items: flex-end;
+}
+
+#dog {
+	display: block;
+	height: 50%;
+	margin: auto;
+	transition: margin-right 2s ease-in-out;
 }
 
 @keyframes fadeout {
@@ -68,22 +75,15 @@ img {
   animation: fadeout 2s linear;
 }
 
-#dog_sitting {
-  width: 300px;
-  height: auto;
-  display: none;
-  max-width: 45%;
-  margin: auto;
-}
-
 #dialogue-container {
-  width: 100%;
-  display: none;
-  justify-content: center;
+	width: fit-content;
+	min-width: 380px;
+	max-width: 100%;
+	height: auto;
+	display: none;
 }
 
 #dialogue-bubble {
-  min-width: 600px;
   z-index: 1;
   padding: 1px;
   border-radius: 10px;
