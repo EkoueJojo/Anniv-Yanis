@@ -139,9 +139,14 @@ img {
   text-align: center;
 }
 
+#cadeau{
+  width: 24vw;
+}
+
 #gateau {
   display: none;
   z-index: 1;
+  max-width: 80vw;
 }
 
 @keyframes cadeau_shake {
@@ -211,11 +216,12 @@ img {
 }
 
 #texte-anniversaire {
-	font-size: 18px;
+  font-size: 35px;
 	padding: 130px;
 	padding-top: 100px;
 	padding-bottom: 10px;
 	margin: 0;
+  font-family: Snell Roundhand, Brush Script MT, Brush Script Std, cursive;
 }
 
 #balloons{
