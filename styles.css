@@ -208,11 +208,12 @@ img {
 }
 
 #texte-anniversaire {
-  font-size: 18px;
+  font-size: 35px;
   margin-bottom: 20px;
   width: 100vw;
   height: 100vh;
   padding: 1%;
+  font-family: "Snell Roundhand", "cursive";
 }
 
 #balloons{
