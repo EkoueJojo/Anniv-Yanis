@@ -9,7 +9,21 @@ const cadeau = document.getElementById("cadeau");
 const gateau = document.getElementById("gateau");
 const ouvrirBtn = document.getElementById("ouvrir-btn");
 const lettreContainer = document.getElementById("lettre-container");
+const smokeContainer = document.getElementById("smokeContainer");
 const flecheBtn = document.getElementById("fleche");
+
+let SMOKE_FRAME_COUNT = 7;
+let SMOKE_FRAME_DURATION = 100;
+let SMOKE_GENERATION_INTERVAL = 250;
+let SMOKE_ANIMATION_INTERVAL = 50;
+let SMOKE_MOVE_SPEED = 2;
+let SMOKE_GENERATION_RATIO = 2;
+let SMOKE_FRAME_CHANGE_RATIO = 5;
+let SMOKE_MAX_BRIGHTNESS = 3 / 4;
+let SMOKE_MAX_X_POSITION = 70;
+
+let smokeGenerationInterval;
+let smokeAnimationInterval;
 
 const dialogues = [
   "Bonjour, c'est un dialogue d'exemple.",
@@ -107,11 +121,56 @@ function eteindreBougie()
   flecheBtn.classList.add("fadein_animation");
   flecheBtn.style.display = "initial";
   flecheBtn.addEventListener("click", showLettre);
+
+  smokeGenerationInterval = setInterval
+  (
+    () =>
+    {
+      if (Math.floor(Math.random() * SMOKE_GENERATION_RATIO) == 0)
+      {
+        let smokeImage = document.createElement("img");
+        smokeImage.className = "smoke";
+        smokeImage.src = `smoke${SMOKE_FRAME_COUNT}.png`;
+        smokeImage.style.filter = `brightness(${Math.random() * SMOKE_MAX_BRIGHTNESS})`;
+        smokeImage.style.bottom = "0";
+        smokeImage.style.left = `${Math.floor(Math.random() * 2 * SMOKE_MAX_X_POSITION) - SMOKE_MAX_X_POSITION}px`;
+        smokeContainer.appendChild(smokeImage);
+      }
+    },
+    SMOKE_GENERATION_INTERVAL
+  );
+
+  smokeAnimationInterval = setInterval
+  (
+    () =>
+    {
+      for (let smokeImage of document.getElementsByClassName("smoke"))
+      {
+        let frameNumber = parseInt(smokeImage.src[smokeImage.src.indexOf("smoke") + 5]);
+
+        smokeImage.style.bottom = `${parseInt(smokeImage.style.bottom.slice(0, -2)) + SMOKE_MOVE_SPEED}px`;
+
+        if (Math.floor(Math.random() * SMOKE_FRAME_CHANGE_RATIO) == 0)
+        {
+          if (frameNumber == 1)
+          {
+            smokeImage.remove();
+          }
+          else
+          {
+            smokeImage.src = `smoke${frameNumber - 1}.png`;
+          }
+        }
+      }
+    },
+    SMOKE_ANIMATION_INTERVAL
+  );
 }
 
 function showLettre()
 {
-  console.log("Troisième étape ^^");
+  clearInterval(smokeGenerationInterval);
+
   flecheBtn.removeEventListener("click", showLettre);
 }
 

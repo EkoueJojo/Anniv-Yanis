@@ -25,6 +25,15 @@ button {
   border-radius: 5px;
 }
 
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 #animation-container {
   width: 100%;
   height: 100%;
@@ -227,6 +236,16 @@ button {
   transition:transform 0.5s ease;
   animation:balloon 4s ease-in-out infinite;
   transform-origin:bottom center;
+}
+
+#smokeContainer {
+	position: relative;
+  z-index: 1;
+}
+
+.smoke {
+	width: 3vh;
+	position: absolute;
 }
 
 @keyframes balloon {
