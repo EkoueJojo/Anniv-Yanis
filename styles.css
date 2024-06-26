@@ -216,7 +216,8 @@ img {
 }
 
 #texte-anniversaire {
-	font-size: 110%;
+  color: black;
+	font-size: 90%;
 	padding: 130px;
 	padding-top: 50px;
 	padding-bottom: 10px;
