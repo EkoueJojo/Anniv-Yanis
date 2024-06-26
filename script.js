@@ -180,11 +180,12 @@ function eteindreBougie()
 
 function showLettre()
 {
+  clearInterval(smokeGenerationInterval);
+
   lettreContainer.classList.add("fadein_animation");
   lettreContainer.style.display = "initial";
   flecheBtn.classList.remove("fadein_animation");
   flecheBtn.classList.add("fadeout_animation");
-  clearInterval(smokeGenerationInterval);
   flecheBtn.removeEventListener("click", showLettre);
   typeLettre();
 }
