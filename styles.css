@@ -102,7 +102,6 @@ img {
 #plume {
   opacity: 0;
 	height: 4em;
-  filter: invert(1) drop-shadow(1px 1px 1px gray);
 }
 
 /* #dialogue-bubble:after {
