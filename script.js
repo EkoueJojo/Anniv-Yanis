@@ -10,12 +10,15 @@ const gateau = document.getElementById("gateau");
 const ouvrirBtn = document.getElementById("ouvrir-btn");
 const lettreContainer = document.getElementById("lettre-container");
 const flecheBtn = document.getElementById("fleche");
+const textanniversaire = document.getElementById("texte-anniversaire");
 
 const dialogues = [
   "Bonjour, c'est un dialogue d'exemple.",
   "Voici la deuxième ligne du dialogue.",
   "Et voici la troisième ligne du dialogue.",
 ];
+
+const lettre = "Ton texte d'anniversaire ici...";
 
 let currentDialogueIndex = 0;
 let charIndex = 0;
@@ -42,6 +45,14 @@ function typeDialogue() {
     setTimeout(typeDialogue, typingSpeed);
   } else {
     nextBtn.disabled = false; // Réactiver le bouton une fois le texte terminé
+  }
+}
+
+function typeLettre() {
+  if (charIndex < lettre.length) {
+    textanniversaire.textContent += lettre.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeLettre, typingSpeed);
   }
 }
 
@@ -104,7 +115,7 @@ function eteindreBougie()
   ouvrirBtn.classList.add("fadeout_animation");
   ouvrirBtn.style.opacity = "0";
   gateau.src = "gateauEteint.png";
-  fume.style.display = "initial";
+  fumes.style.display = "flex";
   flecheBtn.classList.add("fadein_animation");
   flecheBtn.style.display = "initial";
   flecheBtn.addEventListener("click", showLettre);
@@ -112,8 +123,12 @@ function eteindreBougie()
 
 function showLettre()
 {
-  console.log("Troisième étape ^^");
+  lettreContainer.classList.add("fadein_animation");
+  lettreContainer.style.display = "initial";
+  flecheBtn.classList.remove("fadein_animation");
+  flecheBtn.classList.add("fadeout_animation");
   flecheBtn.removeEventListener("click", showLettre);
+  typeLettre();
 }
 
 // Ouvrir le cadeau
